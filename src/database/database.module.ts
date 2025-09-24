@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user.entity';
+import { Profile } from './profile.entity';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // Load .env variables globally
@@ -18,6 +20,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         synchronize: true, // Auto-sync schema (use with caution in production, prefer migrations)
       }),
     }),
+    TypeOrmModule.forFeature([User, Profile]), // Add entities here if needed
   ],
+  exports: [TypeOrmModule],
 })
 export class DatabaseModule {}

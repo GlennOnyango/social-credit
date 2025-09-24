@@ -1,5 +1,5 @@
 import { Exclude } from 'class-transformer';
-import { Profile } from 'src/profile/profile.entity';
+import { Profile } from 'src/database/profile.entity';
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
