@@ -1,5 +1,5 @@
 export class UserResponseDTO {
-  id: number;
+  id: string;
   email: string;
   isActive: boolean;
   createdAt: Date;

@@ -11,7 +11,7 @@ export class AuthenticationController {
   }
 
   @Post('login')
-  login() {
-    return { message: 'This will handle user login' };
+  login(@Body() body: { email: string; password: string }) {
+    return this.authService.login(body.email, body.password);
   }
 }
